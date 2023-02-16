@@ -4,6 +4,27 @@
   background-size: cover;
 }
 
+.hero .navbar {
+  background-color: #000;
+}
+
+.hero-body {
+  display: flex;
+  align-items: center;
+}
+
+.hero-body .title {
+  font-size: 4rem;
+}
+
+figure img {
+  width: 45%;
+}
+
+figure {
+  text-align: center;
+}
+
 .tabs {
   margin-bottom: -1px !important;
   position: relative;
@@ -20,6 +41,10 @@
 }
 .is-active {
   display: initial;
+}
+
+.card {
+  height: 100%;
 }
 
 .cent {
@@ -149,7 +174,7 @@ li {
   list-style: none;
 }
 
-.hero.is-fullheight {
+.hero-body.is-fullheight {
   min-height: 70vh;
 }
 
@@ -175,4 +200,8 @@ li {
   width: 40px;
   height: 40px;
   background-size: contain;
+}
+
+.hidden {
+  display: none;
 }
