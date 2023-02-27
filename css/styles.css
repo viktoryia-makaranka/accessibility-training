@@ -1,3 +1,7 @@
+:root {
+  --main-menu-item-lat-padding: 0.75rem;
+}
+
 .hero-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../img/accessibility-hero-banner.jpg") no-repeat center center fixed;
@@ -154,6 +158,32 @@ figure {
   margin-bottom: .5rem;
 }
 
+.with-sublist {
+  padding-right: 30px;
+  background-image: url(../img/arrow_bottom.png);
+  background-repeat: no-repeat;
+  background-size: 1em;
+  background-position: 95%;
+}
+
+.with-sublist:hover {
+  background-image: url(../img/arrow_bottom_black.png);
+}
+
+.sublist {
+  position: absolute;
+  left: var(--main-menu-item-lat-padding);
+  top: calc(100% - 15px);
+  z-index: 100;
+  width: calc(100% - var(--main-menu-item-lat-padding));
+  padding: 0.5em 0;
+  border-radius: 0.3em;
+  background-color: #fff;
+}
+
+.sublist li {
+  padding: 0.4em 1em
+}
 
 @media screen and (max-width: 1087px) {
   .navbar-menu {
