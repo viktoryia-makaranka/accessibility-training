@@ -37,12 +37,12 @@
                 </div>
               </li>
               <li class="navbar-item">
-                <div role="button" aria-owns="submenu" aria-expanded="false" aria-haspopup="menu" class="button is-white is-outlined with-sublist">
+                <button role="menubar" aria-owns="submenu" aria-expanded="false" aria-haspopup="menu" class="menubar-navigation button is-white is-outlined with-sublist">
                   <span class="icon">
                     <i class="fab fa-superpowers"></i>
                   </span>
                   <span>Services</span>
-                </div>
+                </button>
                 <ul role="menu" id="submenu" class="sublist hidden">
                   <li role="menuitem" aria-setsize="7" aria-posinset="1"><a href="#subscription">Subscription</a></li>
                   <li role="menuitem" aria-setsize="7" aria-posinset="2"><a href="#about">Abouts Us</a></li>
@@ -190,110 +190,107 @@
             <div class="subtitle">We are always ready to tell you about our success</div>
           </div>
         </div>
-        <div class="tabs is-boxed is-centered main-menu" id="nav">
-          <ul role="tablist">
-            <li tabindex="0" role="tab" aria-controls="pane-1" data-target="pane-1" id="1" class="is-active">
-              <a>
-                <span class="icon is-small"><i class="fa fa-image"></i></span>
-                <span>Success stories</span>
-              </a>
-            </li>
-            <li tabindex="0" role="tab" aria-controls="pane-3" data-target="pane-3" id="3">
-              <a>
-                <span class="icon is-small"><i class="fab fa-superpowers"></i></span>
-                <span>Our team</span>
-              </a>
-            </li>
-            <li tabindex="0" role="tab" aria-controls="pane-4" data-target="pane-4" id="4">
-              <a>
-                <span class="icon is-small"><i class="fa fa-film"></i></span>
-                <span>Video</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div role="tabpanel" class="tab-pane is-active" id="pane-1" class="level">
-        <div class="container">
-          <div class="columns features">
-            <div class="column is-6">
-              <div class="card">
-                <div class="card-image">
-                  <div class="image">
-                    <img alt aria-hidden="true" src="./img/tab-1.jpg" class="modal-button">
-                  </div>
-                </div>
-                <div class="card-content">
-                  <div class="content">
-                    <div>Best customer's story</div>
-                    <p>We have achieved customer satisfaction and income increase after having implemented accessibility.</p>
-                    <p>That's a real magic!</p>
-                    <div role="button" aria-haspopup="true" class="button is-dark modal-button" data-target="modal-image1">Learn more</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="column is-6">
-              <div class="card">
-                <div class="card-image">
-                  <div class="image">
-                    <img alt aria-hidden="true" src="./img/tab-2.jpg">
-                  </div>
-                </div>
-                <div class="card-content">
-                  <div class="content">
-                    <div>Other Best customer's story.</div>
-                    <p>We were not so sure in success, but we have had lots of new customers after implementing accessibility.</p>
-                    <p>We will recommend Best Company to our friends!</p>
-                    <div role="button" aria-haspopup="true" class="button is-dark modal-button" data-target="modal-card">Learn more</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="container is-black is-boxed is-centered main-menu" id="nav">
+          <div role="tablist" class="manual" aria-labelledby="achievements-heading">
+            <button tabindex="-1" role="tab" aria-selected="true" aria-controls="pane-1" id="1" class="p-2 is-active">
+              <span class="icon is-small"><i class="fa fa-image"></i></span>
+              <span>Success stories</span>
+            </button>
+            <button tabindex="-1" role="tab" aria-selected="false" aria-controls="pane-3" id="3" class="p-2">
+              <span class="icon is-small"><i class="fab fa-superpowers"></i></span>
+              <span>Our team</span>
+            </button>
+            <button tabindex="-1" role="tab" aria-selected="false" aria-controls="pane-4" id="4" class="p-2">
+              <span class="icon is-small"><i class="fa fa-film"></i></span>
+              <span>Video</span>
+            </button>
           </div>
         </div>
       </div>
 
-      <div role="tabpanel" class="tab-pane" id="pane-3">
-        <div class="columns medias">
-          <div class="column">
-            <div class="media">
-              <div class="media-left">
-                <i class="fab fa-empire fa-4x"></i>
-              </div>
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <a><b>Solution architect</b></a>
-                    <br> Please read about our team happiness
-                  </p>
+      <div class="section">
+        <div role="tabpanel" aria-labelledby="1" id="pane-1">
+          <div class="container">
+            <div class="columns features">
+              <div class="column is-6">
+                <div class="card">
+                  <div class="card-image">
+                    <div class="image">
+                      <img alt aria-hidden="true" src="./img/tab-1.jpg" class="modal-button">
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="content">
+                      <div>Best customer's story</div>
+                      <p>We have achieved customer satisfaction and income increase after having implemented accessibility.</p>
+                      <p>That's a real magic!</p>
+                      <div role="button" aria-haspopup="true" class="button is-dark modal-button" data-target="modal-image1">Learn more</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="media">
-              <div class="media-left">
-                <i class="fab fa-github-alt fa-4x"></i>
-              </div>
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <a><b>Business Analyst</b></a>
-                    <br> Please read about BA growth opportunities
-                  </p>
+              <div class="column is-6">
+                <div class="card">
+                  <div class="card-image">
+                    <div class="image">
+                      <img alt aria-hidden="true" src="./img/tab-2.jpg">
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="content">
+                      <div>Other Best customer's story.</div>
+                      <p>We were not so sure in success, but we have had lots of new customers after implementing accessibility.</p>
+                      <p>We will recommend Best Company to our friends!</p>
+                      <div role="button" aria-haspopup="true" class="button is-dark modal-button" data-target="modal-card">Learn more</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div role="tabpanel" class="tab-pane" id="pane-4">
-        <div class="columns is-centered">
-          <div class="column is-three-quarters">
-            <div class="embed-container image">
-              <iframe title="Inspired video" src="https://player.vimeo.com/video/261794608" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        <div role="tabpanel" aria-labelledby="3" id="pane-3">
+          <div class="columns medias">
+            <div class="column">
+              <div class="media">
+                <div class="media-left">
+                  <i class="fab fa-empire fa-4x"></i>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <a><b>Solution architect</b></a>
+                      <br> Please read about our team happiness
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="media">
+                <div class="media-left">
+                  <i class="fab fa-github-alt fa-4x"></i>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <a><b>Business Analyst</b></a>
+                      <br> Please read about BA growth opportunities
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div role="tabpanel" aria-labelledby="4" id="pane-4">
+          <div class="columns is-centered">
+            <div class="column is-three-quarters">
+              <div class="embed-container image">
+                <iframe title="Inspired video" src="https://player.vimeo.com/video/261794608" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -582,5 +579,7 @@
 
   <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
   <script async src="js/custom.js"></script>
+  <script async src="js/tabs.js"></script>
+  <script async src="js/menu.js"></script>
 </body>
 </html>

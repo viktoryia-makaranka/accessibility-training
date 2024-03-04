@@ -8,6 +8,8 @@ header {
   z-index: 9999;
 }
 
+[role="tab"]:focus,
+[role="tab"]:hover,
 body.accessibility *:focus {
   outline: 2px solid mediumblue;
 }
@@ -43,15 +45,23 @@ figure img {
 figure {
   text-align: center;
 }
-
-.tabs {
-  margin-bottom: -1px !important;
-  position: relative;
+.manual {
+  display: flex;
+}
+.manual [role="tab"] {
+  background: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px 5px 0 0;
+}
+.manual [role="tab"].is-active {
+  background: white;
+  color: black;
 }
 .tab-content {
   padding: 2rem;
 }
-.tab-pane {
+.tab-pane.is-hidden {
   display: none;
 }
 .tab-pane.is-active {
