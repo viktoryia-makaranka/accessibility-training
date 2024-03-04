@@ -195,12 +195,8 @@ figure {
   background-image: url(../img/arrow_bottom_black.png);
 }
 
-.sublist:hover,
-.with-sublist:hover + .sublist {
-  display: block;
-}
-
 .sublist {
+  display: none;
   position: absolute;
   left: var(--main-menu-item-lat-padding);
   top: calc(100% - 15px);
@@ -220,7 +216,9 @@ figure {
     background-color: #888;
   }
 }
-
+.navbar-item {
+  position: relative;
+}
 .logo-link {
   height: 70px;
   width: 250px;

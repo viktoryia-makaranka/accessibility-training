@@ -64,35 +64,6 @@ class MenubarNavigation {
         );
 
         domNode.querySelector('[role=menuitem]').tabIndex = 0;
-
-        // Initial content for page
-        if (location.href.split('#').length > 1) {
-            linkURL = location.href;
-            linkTitle = getLinkNameFromURL(location.href);
-        } else {
-            linkURL = location.href + '#home';
-            linkTitle = 'Home';
-        }
-
-        this.contentGenerator = new NavigationContentGenerator(
-            '#home',
-            'Mythical University'
-        );
-        this.updateContent(linkURL, linkTitle, false);
-
-        function getLinkNameFromURL(url) {
-            function capitalize(str) {
-                return str.charAt(0).toUpperCase() + str.slice(1);
-            }
-
-            var name = url.split('#')[1];
-            if (typeof name === 'string') {
-                name = name.split('-').map(capitalize).join(' ');
-            } else {
-                name = 'Home';
-            }
-            return name;
-        }
     }
 
     getParentMenuitem(menuitem) {
@@ -109,48 +80,6 @@ class MenubarNavigation {
             }
         }
         return false;
-    }
-
-    updateContent(linkURL, linkName, moveFocus) {
-        var h1Node, paraNodes, pathNode;
-
-        if (typeof moveFocus !== 'boolean') {
-            moveFocus = true;
-        }
-
-        // Update content area
-        h1Node = document.querySelector('.page .main h1');
-        if (h1Node) {
-            h1Node.textContent = linkName;
-            h1Node.tabIndex = -1;
-            if (moveFocus) {
-                h1Node.focus();
-            }
-        }
-        paraNodes = document.querySelectorAll('.page .main p');
-        paraNodes.forEach(
-            (p) =>
-                (p.innerHTML = this.contentGenerator.renderParagraph(linkURL, linkName))
-        );
-
-        // Update aria-current
-        this.menuitems.forEach((item) => {
-            item.removeAttribute('aria-current');
-            item.classList.remove('aria-current-path');
-            item.title = '';
-        });
-
-        this.menuitems.forEach((item) => {
-            if (item.href === linkURL) {
-                item.setAttribute('aria-current', 'page');
-                pathNode = this.getParentMenuitem(item);
-                while (pathNode) {
-                    pathNode.classList.add('aria-current-path');
-                    pathNode.title = 'Contains current page link';
-                    pathNode = this.getParentMenuitem(pathNode);
-                }
-            }
-        });
     }
 
     getMenuitems(domNode, depth) {
@@ -178,7 +107,7 @@ class MenubarNavigation {
                         break;
 
                     case 'menuitem':
-                        if (node.getAttribute('aria-haspopup') === 'true') {
+                        if (node.getAttribute('aria-haspopup') === 'menu') {
                             popups.push(node);
                         }
                         nodes.push(node);
@@ -518,7 +447,7 @@ class MenubarNavigation {
     }
 
     hasPopup(menuitem) {
-        return menuitem.getAttribute('aria-haspopup') === 'true';
+        return menuitem.getAttribute('aria-haspopup') === 'menu';
     }
 
     isOpen(menuitem) {
@@ -565,14 +494,13 @@ class MenubarNavigation {
                     this.openPopups = true;
                     popupMenuId = this.openPopup(menuId, tgt);
                     this.setFocusToFirstMenuitem(popupMenuId);
+                    flag = true;
                 } else {
                     if (tgt.href !== '#') {
                         this.closePopupAll();
-                        this.updateContent(tgt.href, tgt.textContent.trim());
                         this.setMenubarDataExpanded('false');
                     }
                 }
-                flag = true;
                 break;
 
             case 'Esc':
@@ -698,12 +626,11 @@ class MenubarNavigation {
                 this.closePopupAll(tgt);
                 this.openPopup(menuId, tgt);
             }
+            event.stopPropagation();
+            event.preventDefault();
         } else {
-            this.updateContent(tgt.href, tgt.textContent.trim());
             this.closePopupAll();
         }
-        event.stopPropagation();
-        event.preventDefault();
     }
 
     onMenuitemPointerover(event) {

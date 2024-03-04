@@ -26,52 +26,53 @@
             </div>
           </nav>
 
-          <nav aria-label="site navigation" id="navbarMenu" class="navbar-menu">
-            <ul class="navbar-end">
-              <li class="navbar-item">
-                <div role="button" class="button is-white is-outlined">
+          <nav role="menubar" aria-label="site navigation" id="navbarMenu" class="menubar-navigation navbar-menu">
+            <ul role="none" class="navbar-end">
+              <li role="none" class="navbar-item">
+                <button role="menuitem" class="button is-white is-outlined">
                   <span class="icon">
                     <i class="fa fa-home"></i>
                   </span>
                   <span>Home</span>
-                </div>
+                </button>
               </li>
-              <li class="navbar-item">
-                <button role="menubar" aria-owns="submenu" aria-expanded="false" aria-haspopup="menu" class="menubar-navigation button is-white is-outlined with-sublist">
+              <li role="none" class="navbar-item">
+                <button role="menuitem" aria-owns="submenu" aria-expanded="false" aria-haspopup="menu" class="button is-white is-outlined with-sublist">
                   <span class="icon">
                     <i class="fab fa-superpowers"></i>
                   </span>
-                  <span>Services</span>
+                  <span>Navigation Menu</span>
                 </button>
-                <ul role="menu" id="submenu" class="sublist hidden">
-                  <li role="menuitem" aria-setsize="7" aria-posinset="1"><a href="#subscription">Subscription</a></li>
-                  <li role="menuitem" aria-setsize="7" aria-posinset="2"><a href="#about">Abouts Us</a></li>
-                  <li role="menuitem" aria-setsize="7" aria-posinset="3"><a href="#services">Services</a></li>
-                  <li role="menuitem" aria-setsize="7" aria-posinset="4"><a href="#achievements">Achievements</a></li>
-                  <li role="menuitem" aria-setsize="7" aria-posinset="5"><a href="#events">Events</a></li>
-                  <li role="menuitem" aria-setsize="7" aria-posinset="6"><a href="#contact-us">Contact us</a></li>
-                  <li role="menuitem" aria-setsize="7" aria-posinset="7"><a href="#forum">Forum</a></li>
+                <ul role="menu" id="submenu" class="sublist">
+                  <li role="none" aria-setsize="7" aria-posinset="1"><a role="menuitem" href="#subscription">Subscription</a></li>
+                  <li role="none" aria-setsize="7" aria-posinset="2"><a role="menuitem" href="#about">Abouts Us</a></li>
+                  <li role="none" aria-setsize="7" aria-posinset="3"><a role="menuitem" href="#services">Services</a></li>
+                  <li role="none" aria-setsize="7" aria-posinset="4"><a role="menuitem" href="#achievements">Achievements</a></li>
+                  <li role="none" aria-setsize="7" aria-posinset="5"><a role="menuitem" href="#events">Events</a></li>
+                  <li role="none" aria-setsize="7" aria-posinset="6"><a role="menuitem" href="#contact-us">Contact us</a></li>
+                  <li role="none" aria-setsize="7" aria-posinset="7"><a role="menuitem" href="#forum">Forum</a></li>
                 </ul>
               </li>
-              <li class="navbar-item">
-                <div role="button" class="button is-white is-outlined">
+              <li role="none" class="navbar-item">
+                <button role="menuitem" class="button is-white is-outlined">
                   <span class="icon">
                     <i class="fa fa-book"></i>
                   </span>
                   <span>Success stories</span>
-                </div>
+                </button>
               </li>
-              <li class="navbar-item">
-                <div role="button" class="button is-white is-outlined">
-                  <span class="icon" aria-label="github">
+              <li role="none" class="navbar-item">
+                <button role="menuitem" class="button is-white is-outlined">
+                  <span class="icon" aria-hidden="true">
                     <i class="fab fa-github"></i>
                   </span>
                   <span>View Source</span>
+                  <span class="visually-hidden"> on github</span>
                   <span class="visually-hidden"> Opens in a new tab</span>
                   <span class="icon" aria-hidden="true">
                     <i class="fa fa-external-link-alt"></i>
                   </span>
-                </div>
+                </button>
               </li>
             </ul>
           </nav>
